@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "13.7.0",
+    "npm": "6.13.6"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Oluwadare Seyi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}
