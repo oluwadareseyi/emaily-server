@@ -25,9 +25,13 @@ const PORT = process.env.PORT || 5000;
 
 mongoose
   .connect(keys.mongoURI, { useUnifiedTopology: true, useNewUrlParser: true })
-  .then(result => {})
+  .then(() => {
+    console.log("DB connection successfull!");
+  })
   .catch(err => {
     console.log(err);
   });
 
-app.listen(PORT);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
