@@ -2,12 +2,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const cookieSession = require("cookie-session");
+const cors = require("cors");
 const keys = require("./config/keys");
 require("./models/user");
 require("./services/passport");
 
 const app = express();
 
+app.use(cors());
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
