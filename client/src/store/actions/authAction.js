@@ -1,16 +1,18 @@
 import axios from "axios";
 import * as actionTypes from "./actionTypes";
 
-export const userAction = userAuth => {
-  return {
+export const fetchUser = () => async dispatch => {
+  const res = await axios.get("/api/current_user");
+  dispatch({
     type: actionTypes.FETCH_USER,
-    userAuth: userAuth
-  };
+    userAuth: res.data
+  });
 };
 
-export const fetchUser = () => {
-  return async dispatch => {
-    const user = await axios.get("/api/current_user");
-    dispatch(userAction(user));
-  };
+export const handleToken = token => async dispatch => {
+  const res = await axios.post("/api/stripe", token);
+  dispatch({
+    type: actionTypes.FETCH_USER,
+    userAuth: res.data
+  });
 };

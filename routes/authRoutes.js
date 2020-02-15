@@ -9,11 +9,17 @@ route.get(
   })
 );
 
-route.get("/auth/google/callback", passport.authenticate("google"));
+route.get(
+  "/auth/google/callback",
+  passport.authenticate("google"),
+  (req, res) => {
+    res.redirect("/surveys");
+  }
+);
 
 route.get("/api/logout", (req, res) => {
   req.logOut();
-  res.send(req.user);
+  res.redirect("/");
 });
 
 route.get("/api/current_user", (req, res) => {

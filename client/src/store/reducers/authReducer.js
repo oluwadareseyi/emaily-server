@@ -1,16 +1,15 @@
-// import * as ActionTypes from "../actions/actionTypes";
+import * as actionTypes from "../actions/actionTypes";
 
-const initialState = {
-  //   userAuth: null
-};
+// const initialState = {
+//   userAuth: null
+// };
 
-const reducers = (state = initialState, action) => {
-  console.log(action);
+const reducers = (state = null, action) => {
+  //   console.log(action);
 
   switch (action.type) {
-    // case value:
-
-    //     break;
+    case actionTypes.FETCH_USER:
+      return action.userAuth || false;
 
     default:
       return state;

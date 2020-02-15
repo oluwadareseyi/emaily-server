@@ -4,22 +4,16 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Header from "./components/Header";
 import { connect } from "react-redux";
 import * as actions from "./store/actions/authAction";
+import Landing from "./components/Landing";
 
 const Dashboard = () => <h2>Dashboard</h2>;
 const SurveyNew = () => <h2>SurveyNew</h2>;
-const Landing = () => (
-  <React.Fragment>
-    <h2>Landing</h2>
-    <a href="/auth/google">
-      <button>Sign in with Google</button>
-    </a>
-  </React.Fragment>
-);
 
 const App = props => {
+  const { fetchUser } = props;
   useEffect(() => {
-    props.fetchUser();
-  });
+    fetchUser();
+  }, [fetchUser]);
 
   return (
     <div className="container">
