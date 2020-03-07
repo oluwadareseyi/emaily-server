@@ -9,6 +9,8 @@ import materializeCSS from "materialize-css/dist/css/materialize.min.css";
 import authReducer from "./store/reducers/authReducer";
 import surveyReducer from "./store/reducers/surveyReducer";
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
+import axios from "axios";
+window.axios = axios;
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
