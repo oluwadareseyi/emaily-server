@@ -53,3 +53,24 @@ mongoose
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+// const cors = require('cors')
+
+// const corsOptions = {
+//   origin: 'https://yourdomain.com'
+// }
+
+// app.get('/products/:id', cors(corsOptions), (req, res, next) => {
+//   //...
+// })
+
+// const whitelist = ['http://example1.com', 'http://example2.com']
+// const corsOptions = {
+//   origin: function(origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
